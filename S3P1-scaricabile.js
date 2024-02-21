@@ -89,7 +89,7 @@ console.log(parola + " => " + reverseTest);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+ 
 // funzione upperFirst che riceve come parametro una frase
 function upperFirst(frase) {
     // sconpone con la funzione split utilizzano lo spazio tra le parole per creare un nuovo array di parole 
@@ -128,11 +128,11 @@ console.log(upperParola.join(" "));
 // funzione giveMeRandom che riceve come parametro un valore numerico intero
 function giveMeRandom(n) {
     // inizializzo un array vuoto
-    let nArray = [];
+    const nArray = [];
     // ciclo sul valore inserito dall'user
     for (let i = 0; i < n; i++) {
         // assegno al nuovo array il valore random da 0 a 10 per n volte
-        nArray.push(Math.floor(Math.random() * 10));
+        nArray.push(Math.floor((Math.random() * 10) + 1)); // genera un numero tra 0 e 10
     }
     // restituisce il nuovo array contenente n numeri random da 0 a 10 
     return nArray;
@@ -140,7 +140,7 @@ function giveMeRandom(n) {
 
 console.log("Esercizio n. 5");
 // richiamo la funzione e ne assegno il valore alla variabile
-let lista = giveMeRandom(10);
+let lista = giveMeRandom(7);
 console.log(lista);
 
 
@@ -184,7 +184,7 @@ function crazyDiff(n) {
 };
 
 console.log("Esercizio Extra n. 2");
-let x = 9;
+let x = 3;
 // richiamo la funzione e ne assegno il valore
 let crazyResult = crazyDiff(x);
 console.log("Differenza assoluta => " + crazyResult);
@@ -236,7 +236,7 @@ console.log(strFinal);
 // funzione che controlla il valore inserito dall'user e verifica se multiplo di 3 o di 7
 function check3and7(n) {
     // verifica la condizione se multiplo di 3 o di 7 e ne restituisce true o false
-    if (n % 3 === 0 || n % 7 === 0) {
+    if ((n >= 0 && (n % 3 === 0 || n % 7 === 0))) {
         // restituisce vero
         return true;
     } else {
